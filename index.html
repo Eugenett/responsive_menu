@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="ionicons-2.0.1/css/ionicons.css">
+	<script src="js/vue.js"></script>
+	<title>Responsive_menu</title>
+</head>
+<body>
+	<div id="wrapper">
+		<div class="content">
+		<header>
+			<button class="menu-btn" @click="init=!init"><i class="ion-navicon"></i></button>
+			<h1>LOGO</h1>
+			<nav>
+				<div>home</div>
+				<div>our services</div>
+				<div>about us</div>
+				<div>contact us</div>
+			</nav>
+		</header>
+		<transition name="slide">
+		<nav id="nav-slide" v-show="init">
+			<div>home</div>
+			<div>our services</div>
+			<div>about us</div>
+			<div>contact us</div>
+		</nav>
+	    </transition>
+		</div>
+	</div>
+<script>
+	new Vue({
+		el: "#wrapper",
+		data: {
+			init: false
+		},
+	})
+</script>
+</body>
+</html>
